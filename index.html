@@ -42,6 +42,15 @@
       z-index: -1;
     }
 
+    @keyframes bassPulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.04); }
+    }
+
+    .bass-sync {
+      animation: bassPulse 1s infinite ease-in-out;
+    }
+
     @keyframes slideUp {
       0% {
         opacity: 0;
@@ -67,7 +76,7 @@
   <div id="hero" class="relative flex items-center justify-center text-center">
     <div class="vanta-bg" id="vanta-bg"></div>
     <div class="z-10 px-6">
-      <h1 class="text-6xl md:text-8xl font-extrabold tracking-widest uppercase slide-up slide-up-delay-1">
+      <h1 class="text-6xl md:text-8xl font-extrabold tracking-widest uppercase slide-up slide-up-delay-1 bass-sync">
         SUBZTANCZA
       </h1>
       <h2 class="mt-6 text-lg md:text-2xl max-w-xl mx-auto text-white font-normal slide-up slide-up-delay-2">
