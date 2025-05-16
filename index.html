@@ -43,7 +43,7 @@
     }
   </style>
 </head>
-<body class="bg-black text-white m-0 p-0 overflow-hidden">
+<body class="bg-black text-white m-0 p-0 overflow-x-hidden">
   <div id="hero" class="relative flex items-center justify-center text-center">
     <div class="vanta-bg" id="vanta-bg"></div>
     <div class="z-10 px-6">
@@ -79,5 +79,15 @@
       spacing: 15.0
     });
   </script>
+  <section class="relative z-10 mt-20 min-h-[120vh] text-center text-white/30 text-sm tracking-widest font-mono select-none">
+    <p class="mb-2 opacity-40 animate-pulse">— sygnał przyjęty | [52°13'N 21°00'E] | kod: bass-213 —</p>
+    <pre class="opacity-20 text-xs leading-snug">
+[sub.signal]
+> initial handshake...
+> authenticating...
+> channel encrypted [OK]
+> awaiting further transmission
+    </pre>
+  </section>
 </body>
 </html>
