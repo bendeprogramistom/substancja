@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SUBSTANCJA</title>
+  <title>SUBZTANCZA</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js"></script>
@@ -42,63 +42,41 @@
       z-index: -1;
     }
 
-    .glitch {
-      position: relative;
-      color: #a855f7;
+    @keyframes slideUp {
+      0% {
+        opacity: 0;
+        transform: translateY(50%);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
-    .glitch::before,
-    .glitch::after {
-      content: attr(data-text);
-      position: absolute;
-      left: 0;
-      width: 100%;
-      overflow: hidden;
-      color: #a855f7;
-      clip: rect(0, 900px, 0, 0);
+    .slide-up {
+      animation: slideUp 1s ease-out forwards;
+      opacity: 0;
     }
 
-    .glitch::before {
-      animation: glitchTop 2s infinite linear alternate-reverse;
-    }
-
-    .glitch::after {
-      animation: glitchBottom 1.5s infinite linear alternate-reverse;
-    }
-
-    @keyframes glitchTop {
-      0%   { clip: rect(0, 9999px, 0, 0); }
-      20%  { clip: rect(0, 9999px, 80px, 0); transform: translate(-2px, -2px); }
-      40%  { clip: rect(0, 9999px, 30px, 0); transform: translate(2px, -1px); }
-      60%  { clip: rect(0, 9999px, 60px, 0); transform: translate(-1px, 2px); }
-      80%  { clip: rect(0, 9999px, 40px, 0); transform: translate(1px, -2px); }
-      100% { clip: rect(0, 9999px, 0, 0); transform: translate(0); }
-    }
-
-    @keyframes glitchBottom {
-      0%   { clip: rect(0, 9999px, 0, 0); }
-      20%  { clip: rect(85px, 9999px, 140px, 0); transform: translate(2px, 1px); }
-      40%  { clip: rect(60px, 9999px, 100px, 0); transform: translate(-1px, -1px); }
-      60%  { clip: rect(90px, 9999px, 120px, 0); transform: translate(1px, 2px); }
-      80%  { clip: rect(70px, 9999px, 110px, 0); transform: translate(-2px, -1px); }
-      100% { clip: rect(0, 9999px, 0, 0); transform: translate(0); }
-    }
+    .slide-up-delay-1 { animation-delay: 0.2s; }
+    .slide-up-delay-2 { animation-delay: 0.4s; }
+    .slide-up-delay-3 { animation-delay: 0.6s; }
   </style>
 </head>
 <body class="bg-black text-white m-0 p-0 overflow-hidden">
   <div id="hero" class="relative flex items-center justify-center text-center">
     <div class="vanta-bg" id="vanta-bg"></div>
     <div class="z-10 px-6">
-      <h1 class="text-6xl md:text-8xl font-extrabold tracking-widest glitch" data-text="SUBSTANCJA">
-        Substancja.
+      <h1 class="text-6xl md:text-8xl font-extrabold tracking-widest uppercase slide-up slide-up-delay-1">
+        SUBZTANCZA
       </h1>
-      <h2 class="mt-6 text-lg md:text-2xl max-w-xl mx-auto text-white font-normal">
+      <h2 class="mt-6 text-lg md:text-2xl max-w-xl mx-auto text-white font-normal slide-up slide-up-delay-2">
         Sieć artystów, promotorów i bassowych freaków.
       </h2>
-      <h3 class="mt-4 text-base md:text-lg max-w-xl mx-auto text-white/70 font-normal">
+      <h3 class="mt-4 text-base md:text-lg max-w-xl mx-auto text-white/70 font-normal slide-up slide-up-delay-3">
         Tworzymy przestrzeń, gdzie muzyka niskich częstotliwości łączy ludzi z różnych światów.
       </h3>
-      <a href="#" class="mt-8 inline-block px-6 py-3 bg-purple-600 hover:bg-teal-300 hover:text-black text-white font-semibold rounded-md transition">
+      <a href="#" class="mt-8 inline-block px-6 py-3 bg-purple-600 hover:bg-teal-300 hover:text-black text-white font-semibold rounded-md transition slide-up slide-up-delay-3">
         Dołącz do ruchu
       </a>
     </div>
